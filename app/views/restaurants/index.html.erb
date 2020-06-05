@@ -2,6 +2,16 @@
 
 <ul>
   <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <li>
+      
+      <% if restaurant.photo.attached? %>
+        <%= image_tag restaurant.photo, width: '300px' %>
+      <% else %>
+        <% placeholder_url = "https://lunawood.com/wp-content/uploads/2018/02/placeholder-image.png" %>
+        <%= image_tag placeholder_url, width: '300px' %>
+      <% end %>
+
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    </li>
   <% end %>
 </ul>
