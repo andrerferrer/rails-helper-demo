@@ -19,6 +19,23 @@ In `app/views/restaurants/index` we'll add the photo, handling whether it exists
       <% end %>
 ```
 
-### 2 
+### 2. Refactor with a Helper
+
+In the helper
+
+```ruby
+module RestaurantsHelper
+  def restaurant_photo_url(restaurant)
+    placeholder = 'https://lunawood.com/wp-content/uploads/2018/02/placeholder-image.png'
+    restaurant.photo.attached? ? restaurant.photo : placeholder
+  end
+end
+```
+
+In the views, we just need this right now.
+
+```
+      <%= image_tag restaurant_photo_url(restaurant), width: '300px' %>
+```
 
 Good luck, have fun!
