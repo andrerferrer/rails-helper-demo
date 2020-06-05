@@ -21,7 +21,7 @@ In `app/views/restaurants/index` we'll add the photo, handling whether it exists
 
 ### 2. Refactor with a Helper
 
-In the helper
+In the [helper](https://github.com/andrerferrer/rails-helper-demo/blob/master/app/helpers/restaurants_helper.rb).
 
 ```ruby
 module RestaurantsHelper
@@ -32,7 +32,7 @@ module RestaurantsHelper
 end
 ```
 
-In the views, we just need this right now.
+In the [views](https://github.com/andrerferrer/rails-helper-demo/blob/master/app/views/restaurants/index.html.erb), we just need this right now.
 
 ```
       <%= image_tag restaurant_photo_url(restaurant), width: '300px' %>
